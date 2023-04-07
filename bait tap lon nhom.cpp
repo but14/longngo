@@ -38,7 +38,7 @@ struct nhanvien nhapnv() {
 	printf("Chuc vu: ");
 	getchar();
 	gets(nv.chucvu);
-	printf("Phong: \n");
+	printf("Phong: ");
 	scanf("%s",&nv.phong);
 	return nv;
 }
@@ -81,7 +81,7 @@ void timtheoten(struct nhanvien* ds, int  slnv){
 /*Ghi thong tin cua mot nhan vien ra file txt*/
 void ghifile(struct nhanvien* ds, int  slnv){
 
-	FILE* fp=fopen("D:\\danhsachnhanvien.txt","a" );
+	FILE* fp=fopen("D:\\danhsachnhanvien1.txt","a" );
 	int i;
 	for(i = 0;i<slnv;i++){
 		struct nhanvien nv=ds[i];
@@ -92,7 +92,7 @@ fclose(fp);	}
 
 //Infile
 void docfile(struct nhanvien* ds, int* slnv){
-	FILE* fp=fopen("D:\\danhsachnhanvien.txt","r" );
+	FILE* fp=fopen("D:\\danhsachnhanvien1.txt","r" );
 	int i=0;
 	if(fp) {
 		
@@ -117,9 +117,8 @@ int main()
 	int slnv=0;
 	int tuychon;
 	
-	printf("DANH SACH NHAN VIEN: \n");
-	docfile(dsnv,&slnv);
-	hienthittnhanvien;
+	
+
 	/*Vong lap cac chuc nang cua chuong trinh*/
 	do{
 		printf("==========M E N U=========");
@@ -134,7 +133,7 @@ int main()
 		scanf("%d",&tuychon);
 		struct nhanvien nv;
 		switch(tuychon){
-			case 0: break;
+			case 0: return 0;
 			case 1: 	
 	                    nv= nhapnv();
 	                    dsnv[slnv++]=nv;
