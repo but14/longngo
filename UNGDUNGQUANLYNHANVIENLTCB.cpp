@@ -124,10 +124,11 @@ fclose(fOut);	}
 int main()
 {
 	{
-	  int n, i, *ptr;
+	  int n, i;
+	  struct nhanvien *ptr;
     printf("Nhap so luong phan tu: ");
-    scanf("%d", &n);
-    ptr = (int *)malloc(n * sizeof(int));
+    scanf("%d%*c", &n);
+    ptr = (struct nhanvien*)malloc(n * sizeof(struct nhanvien));
  
     // N?u không th? c?p phát, 
     // hàm malloc s? tr? v? con tr? NULL
